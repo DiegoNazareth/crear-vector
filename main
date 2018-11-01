@@ -1,0 +1,51 @@
+#include "Vector.hpp"
+	#include <iostream>
+	using namespace std;
+	
+	int main(int argc, char *argv[])
+	{
+	    int i, j;
+	    cout << "tamaÃ±o de vectores A y B ";
+	    cin >> i >> j;
+	    Vector A(i), B(j), C;
+	    cout << "\n Vector A \n";
+	    cin >> A;
+	    cout << A;
+	    cout << "\n Vector B \n";
+	    cin >> B;
+	    cout << B;
+	    cout << "\n Vector C \n";
+	    if(A.longitud()==B.longitud()){
+	    	C = A + B;
+	    	cout << " Suma \n" << C;
+		}
+		else{
+			cout<<"La suma no esta definida...\n\n";
+		}
+	    //C.operator=( A.operator+( B ) );
+	    C = 2 * B;
+	    cout << " C=2*B \n" << C;
+	    
+	    if ( A == B )
+	        cout << " iguales \n";
+	    else
+	        cout << " diferente \n";
+	    cout << "\n indice \n";
+	    A[A.longitud()-1] = 9;
+	    cout << A << endl;
+	    cout << A[0];
+	    cout << "\n renew, nueva dimension de A \n";
+	    cin >> i;
+	    j = A.longitud();
+	    A=A.renew(i);
+	    cout << A << " longitud " << A.longitud() << endl;
+	    for( int i = j; i < A.longitud(); i++ ) {
+	        cout << "elemento " << i << " ";
+	        cin >> A[i];
+	    }
+	    cout << " \n matriz A \n";
+	    cout << A;
+	    cin.ignore();
+	    cin.get();
+	    return 0;
+	}
